@@ -11,7 +11,7 @@ how work
 git clone https://github.com/getsense1/roscontrol_esp32
 cd ./rosserial_esp32, read README.md, install firmware to ESP32 board
 
-install The ros_control packages
+install the ros_control packages in ROS 
 cd ./roscontrol_ROS
 this is workspace, 
 set ROS environment: source /opt/ros/kinetic/setup.bash
