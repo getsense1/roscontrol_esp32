@@ -15,6 +15,7 @@ cd ./roscontrol_ROS
 this is workspace, 
 set ROS environment: source /opt/ros/kinetic/setup.bash
 make package: control_heater, node: control_heater_node
+catkin_make
 run node "control_heater_node": roslaunch control_heater control_heater.launch
 get joint state(using JointStatesController->JointStateInterface): rostopic echo /control_heater/joint_states
 set joint command(using JointPositionController->PositionJointInterface): rostopic pub /control_heater/heater_cmd_controller/command  std_msgs/Float64 5.98
