@@ -1,0 +1,17 @@
+# Settings for ros_control hardware interface
+hardware_interface:
+   joints:
+      - heater_hw_interface
+
+joint_state_controller:
+   type:         joint_state_controller/JointStateController
+   publish_rate: 1
+
+
+# Individual Position Controllers ---------------------------------------
+# Allows to send individual ROS msg of Float64 to each joint separately
+heater_cmd_controller:
+   type: position_controllers/JointPositionController
+   joint: heater_hw_interface
+
+

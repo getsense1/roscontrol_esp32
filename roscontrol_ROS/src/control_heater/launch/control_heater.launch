@@ -1,0 +1,21 @@
+<launch>
+  <group ns="control_heater">
+
+    <!-- Load hardware interface -->
+    <node name="control_heater" pkg="control_heater" type="control_heater_node"
+          output="screen"/>
+
+    <!-- Load controller settings -->
+    <rosparam file="$(find control_heater)/config/controllers.yaml" command="load"/>
+
+    <!-- Load controller manager -->
+    <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false"
+	  output="screen" args="spawn joint_state_controller heater_cmd_controller" />
+
+    <!-- Load ros_serial -->
+    <node name="rosserial_python" pkg="rosserial_python" type="serial_node.py" respawn="false"
+	  output="screen" args="tcp" />
+
+  </group>
+</launch>
+
